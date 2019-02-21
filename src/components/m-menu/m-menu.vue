@@ -1,21 +1,37 @@
 <template>
   <div class="m-menu">
     <ul>
-      <li>
-        <img src="@/assets/images/footer_btn_selected01.png" alt="">
-        <span>首页</span>
+      <!-- <li class="selected">
+        <router-link to="/">
+          <img src="@/assets/images/footer_btn_selected01.png" alt="">
+          <span>首页</span>
+        </router-link>
       </li>
       <li>
-        <img src="@/assets/images/footer_btn02.png" alt="">
-        <span>学习</span>
+        <router-link to="/learn">
+          <img src="@/assets/images/footer_btn02.png" alt="">
+          <span>学习</span>
+        </router-link>
       </li>
       <li>
-        <img src="@/assets/images/footer_btn03.png" alt="">
-        <span>工具</span>
+        <router-link to="/tool">
+          <img src="@/assets/images/footer_btn03.png" alt="">
+          <span>工具</span>
+        </router-link>
       </li>
       <li>
-        <img src="@/assets/images/footer_btn04.png" alt="">
-        <span>我的</span>
+        <router-link to="/learner">
+          <img src="@/assets/images/footer_btn04.png" alt="">
+          <span>我的</span>
+        </router-link>
+      </li> -->
+      <li v-for="(obj,index) in menuDate" :key='index'>
+        <router-link :to="obj.route">
+            <img :src="obj.img" alt="">
+            <span>
+              {{obj.text}}
+            </span>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -25,9 +41,33 @@
     name: 'HelloWorld',
     data() {
       return {
-        msg: ''
+        msg: '',
+        menuDate:[{
+          img:require('@/assets/images/footer_btn01.png'),
+          text:'首页',
+          route:'/'
+        },
+        {
+          img:require('@/assets/images/footer_btn02.png'),
+          text:'学习',
+          route:'/learn'
+        },
+        {
+          img:require('@/assets/images/footer_btn03.png'),
+          text:'工具',
+          route:'/tool'
+        },
+        {
+          img:require('@/assets/images/footer_btn04.png'),
+          text:'我的',
+          route:'/learner'
+        }]
       }
+    },
+    mounted(){
+      console.log(this.menuDate);
     }
+    // 监听路由
   }
 </script>
 
@@ -39,29 +79,37 @@
     bottom: 0;
     left: 0;
     width: 100%;
-
     ul {
       display: flex;
       height: 100%;
-
       li {
         width: 25%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          width: 67px;
-          height: 67px;
-          display: block;
+        a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 67px;
+            height: 67px;
+            display: block;
+          }
+          span {
+            font-size: 32px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            line-height: 69px;
+            color: #8B91A1;
+          }
         }
-
-        span {
-          font-size: 32px;
-          font-family: MicrosoftYaHei;
-          font-weight: 400;
-          line-height: 69px;
+      }
+      .selected {
+        a {
+          span {
+            color: #F40E1F;
+          }
         }
       }
     }

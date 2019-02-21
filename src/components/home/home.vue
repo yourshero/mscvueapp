@@ -1,26 +1,17 @@
 <template>
   <div class="home">
-    <m-head></m-head>
-    <div class="main">
-        {{msg}}
-    </div>
-    <m-menu></m-menu>
+  {{msg}}    
   </div>
 </template>
 
 <script>
-  import Mhead from '../m-head/m-head';
-  import Mmenu from '../m-menu/m-menu';
+
   export default {
     name: 'HelloWorld',
     data() {
       return {
         msg: '首页'
       }
-    },
-    components: {
-      'm-head': Mhead,
-      'm-menu': Mmenu,
     }
   }
 </script>
