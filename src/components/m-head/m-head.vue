@@ -29,7 +29,7 @@
     top: 0;
     left: 0;
     width: 100%;
-
+    z-index: 1000;
     .m-head-box {
       height: 67px;
       width: 859px;

@@ -12,22 +12,34 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta:{
+        curIndex:0
+      }
     },
     {
       path: '/learn',
       name: 'Learn',
-      component: Learn
-    },
-    {
-      path: '/learner',
-      name: 'Learner',
-      component: Learner
+      component: Learn,
+      meta:{
+        curIndex:1
+      }
     },
     {
       path: '/tool',
       name: 'Tool',
-      component: Tool
+      component: Tool,
+      meta:{
+        curIndex:2
+      }
+    },
+    {
+      path: '/learner',
+      name: 'Learner',
+      component: Learner,
+      meta:{
+        curIndex:3
+      }
     }
   ]
 })

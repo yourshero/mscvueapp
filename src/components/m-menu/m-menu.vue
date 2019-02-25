@@ -25,12 +25,12 @@
           <span>我的</span>
         </router-link>
       </li> -->
-      <li v-for="(obj,index) in menuDate" :key='index'>
+      <li v-for="(obj,index) in menuDate" :key='index' :class="{cur:curIndex==index}">
         <router-link :to="obj.route">
-            <img :src="obj.img" alt="">
-            <span>
-              {{obj.text}}
-            </span>
+          <img :src="curIndex==index?obj.cur_img:obj.img" alt="">
+          <span>
+            {{obj.text}}
+          </span>
         </router-link>
       </li>
     </ul>
@@ -42,32 +42,45 @@
     data() {
       return {
         msg: '',
-        menuDate:[{
-          img:require('@/assets/images/footer_btn01.png'),
-          text:'首页',
-          route:'/'
-        },
-        {
-          img:require('@/assets/images/footer_btn02.png'),
-          text:'学习',
-          route:'/learn'
-        },
-        {
-          img:require('@/assets/images/footer_btn03.png'),
-          text:'工具',
-          route:'/tool'
-        },
-        {
-          img:require('@/assets/images/footer_btn04.png'),
-          text:'我的',
-          route:'/learner'
-        }]
+        menuDate: [{
+            img: require('@/assets/images/footer_btn01.png'),
+            text: '首页',
+            route: '/',
+            cur_img: require('@/assets/images/footer_btn_selected01.png'),
+          },
+          {
+            img: require('@/assets/images/footer_btn02.png'),
+            text: '学习',
+            route: '/learn',
+            cur_img: require('@/assets/images/footer_btn_selected02.png'),
+          },
+          {
+            img: require('@/assets/images/footer_btn03.png'),
+            text: '工具',
+            route: '/tool',
+            cur_img: require('@/assets/images/footer_btn_selected03.png'),
+          },
+          {
+            img: require('@/assets/images/footer_btn04.png'),
+            text: '我的',
+            route: '/learner',
+            cur_img: require('@/assets/images/footer_btn_selected04.png'),
+          }
+        ],
+        curIndex: 0
       }
     },
-    mounted(){
-      console.log(this.menuDate);
-    }
+    mounted() {
+      // console.log(this.menuDate);
+      this.curIndex = this.$route.meta.curIndex;
+    },
     // 监听路由
+    watch: {
+      $route(val) {
+        console.log(this.curIndex)
+        this.curIndex = val.meta.curIndex;
+      }
+    }
   }
 </script>
 
@@ -79,11 +92,14 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    background: #FBFBFB;  
     ul {
       display: flex;
       height: 100%;
+
       li {
         width: 25%;
+
         a {
           display: flex;
           flex-direction: column;
@@ -91,11 +107,13 @@
           align-items: center;
           width: 100%;
           height: 100%;
+
           img {
             width: 67px;
             height: 67px;
             display: block;
           }
+
           span {
             font-size: 32px;
             font-family: MicrosoftYaHei;
@@ -104,7 +122,18 @@
             color: #8B91A1;
           }
         }
+
       }
+
+      .cur {
+        a {
+          span {
+            color: #F40E1F;
+          }
+        }
+
+      }
+
       .selected {
         a {
           span {
