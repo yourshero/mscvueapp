@@ -52,11 +52,11 @@
               <div class="info">
                 <div class="info-tit">
                   <p>
-                  {{item.name}}
-                </p>
-                <span>
-                  {{item.des}}
-                </span>
+                    {{item.name}}
+                  </p>
+                  <span>
+                    {{item.des}}
+                  </span>
                 </div>
                 <router-link to='#'>
                   详细介绍 >>
@@ -66,22 +66,105 @@
           </ul>
         </div>
       </div>
+      <!-- 盈利课程 -->
+      <div class="section4">
+        <m-home-title v-bind:titleDate="titleDate" v-bind:cur="cur3">
+        </m-home-title>
+        <div class="box">
+          <div class='cover1'>
+            <img src="@/assets/images/home/bg_img7.png" alt="">
+          </div>
+          <ul>
+            <li v-for="(item,index) in courseDate" :key='index'>
+              <img :src="item.coverUrl" alt="" class="cover2">
+              <span class="course-name">
+                {{item.title}}
+              </span>
+              <div class="info">
+                <span>
+                  {{item.des}}
+                </span>
+                <p>
+                  <img src="@/assets/images/home/home_icon.png" alt="">
+                  <span>
+                    {{item.total}}
+                  </span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 学员培养 -->
+      <div class="section5">
+        <div class="tit">
+          <m-home-title v-bind:titleDate="titleDate" v-bind:cur="cur4">
+          </m-home-title>
+        </div>
+        <div class="box">
+          <home-carousel-slide>
+          </home-carousel-slide>
+          <home-carousel-card>
+          </home-carousel-card>
+        </div>
+      </div>
+      <!-- 新闻热点 -->
+      <div class='section6'>
+        <div class="tit">
+          <m-home-title v-bind:titleDate="titleDate" v-bind:cur="cur5">
+          </m-home-title>
+        </div>
+        <div class="box">
+          <ul v-for="(item,index) in newsDate" :key="index">
+            <li>
+              <span class="title">
+                {{item.title}}
+              </span>
+              <p>
+                <span class="time">
+                  {{item.time}}
+                </span>
+                <span class="author">
+                  {{item.author}}
+                </span>
+                <span class="read-total">
+                  {{item.readTotal}}
+                </span>
+              </p>
+            </li>
+            <li>
+              <img :src="item.newsImg" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <m-home-menu></m-home-menu>
   </div>
 </template>
 <script>
   import homeCarousel from '@/components/m-carousel/m-carousel';
   import mHomeTitle from '@/components/m-home-title/m-home-title';
+  import homeCarouselSlide from '@/components/m-carousel-slide/m-carousel-slide';
+  import homeCarouselCard from '@/components/m-carousel-card/m-carousel-card';
+  import mHomeMenu from '@/components/m-home-menu/m-home-menu';
   export default {
     name: 'HelloWorld',
+    components: {
+      'home-carousel': homeCarousel,
+      'm-home-title': mHomeTitle,
+      'home-carousel-slide': homeCarouselSlide,
+      'home-carousel-card': homeCarouselCard,
+      'm-home-menu':mHomeMenu
+    },
     data() {
       return {
         msg: '我的',
         cur1: '企业文化',
         cur2: '核心人物',
-        cur3: '',
-        cur4: '',
-        cur5: '',
+        cur3: '盈利课程',
+        cur4: '学员培养',
+        cur5: '新闻热点',
         // 小标题
         titleDate: [{
             name: '企业文化',
@@ -142,168 +225,65 @@
         bg3: require('@/assets/images/home/bg_img3.png'),
         bg4: require('@/assets/images/home/bg_img4.png'),
         //核心人物
-        peopleDate:[
-          {
-            imgUrl:require('@/assets/images/home/pic_1.png'),
-            name:'雷自昌(首席知识官-CKO)',
-            des:'中国电商运营知识的系统整理者'
+        peopleDate: [{
+            imgUrl: require('@/assets/images/home/pic_1.png'),
+            name: '雷自昌(首席知识官-CKO)',
+            des: '中国电商运营知识的系统整理者'
           },
           {
-            imgUrl:require('@/assets/images/home/pic_2.png'),
-            name:'牛永革(学术委员会主席)',
-            des:'教授 博士生导师'
+            imgUrl: require('@/assets/images/home/pic_2.png'),
+            name: '牛永革(学术委员会主席)',
+            des: '教授 博士生导师'
           },
           {
-            imgUrl:require('@/assets/images/home/pic_3.png'),
-            name:'唐凯江(首席执行官-CEO)',
-            des:' 副教授 硕士生导师'
+            imgUrl: require('@/assets/images/home/pic_3.png'),
+            name: '唐凯江(首席执行官-CEO)',
+            des: ' 副教授 硕士生导师'
           },
+        ],
+        // 盈利课程
+        courseDate: [{
+            title: '经理班5.0盈利课程',
+            des: '带你打造盈利店铺',
+            total: '4378',
+            coverUrl: require('@/assets/images/home/bg_img5.png')
+          },
+          {
+            title: '总裁圈1.0盈利商道课程',
+            des: '教你电商盈利商道',
+            total: '1231',
+            coverUrl: require('@/assets/images/home/bg_img6.png')
+          }
+        ],
+        //热点新闻
+        newsDate: [{
+            title: '淘宝网2018违规计分清零详情',
+            time: '2019-01-08',
+            author: '幕思城-嘉措',
+            readTotal: '19',
+            newsImg: require('@/assets/images/home/news_pic1.png')
+          },
+          {
+            title: '淘宝网2018违规计分清零详情1',
+            time: '2019-01-01',
+            author: '幕思城-嘉措',
+            readTotal: '2',
+            newsImg: require('@/assets/images/home/news_pic1.png')
+          },
+          {
+            title: '淘宝网2018违规计分清零详情2',
+            time: '2019-01-02',
+            author: '幕思城-嘉措',
+            readTotal: '1333',
+            newsImg: require('@/assets/images/home/news_pic1.png')
+          }
         ]
       }
-    },
-    components: {
-      'home-carousel': homeCarousel,
-      'm-home-title': mHomeTitle
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
-  .home {
-    .container {
-      .section1 {
-        padding-top: 107px;
-        background: #fff;
-
-        .title {
-          font-size: 50px;
-          width: 724px;
-          height: 108px;
-          background: rgba(211, 59, 160, 1);
-          border-radius: 54px;
-          color: #fff;
-          margin: 0 auto;
-          line-height: 108px;
-          text-align: center;
-          margin-bottom: 97px;
-        }
-
-        ul {
-          display: flex;
-          flex-wrap: wrap;
-
-          li {
-            width: 33.3%;
-            font-size: 34px;
-            text-align: center;
-            margin-bottom: 99px;
-
-            a {
-              span {
-                color: #3A3A3A;
-              }
-
-              img {
-                width: 122px;
-                height: 122px;
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 28px;
-              }
-            }
-          }
-        }
-      }
-
-      .section2 {
-        padding: 0 24px;
-        background: #fff;
-        margin-bottom:34px;
-        padding-bottom: 55px;
-        .box {
-          .bg1 {
-            margin-bottom: 42px;
-
-            img {
-              height: 525px;
-              width: 100%;
-              display: block;
-            }
-          }
-
-          .bg4 {
-            img {
-              height: 329px;
-              width: 100%;
-              display: block;
-            }
-          }
-
-          ul {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 21px;
-
-            li {
-              width: 48.5%;
-
-              img {
-                width: 100%;
-                display: block;
-                height: 273px;
-              }
-            }
-          }
-        }
-      }
-      .section3{
-        background: #fff;
-        padding: 0 23px;
-        .box{
-          ul{
-            li{
-              display: flex;
-              justify-content: start;
-              padding-left: 31px;
-              border-bottom: 2px dashed #7B7B7B;
-              padding-bottom:56px;
-              padding-top: 74px;
-              img{
-                display: block;
-                height: 313px;
-                width: 252px;
-              }
-              .info{
-                display: flex;
-                flex-direction: column;
-                margin-left: 39px;
-                justify-content: space-between;
-                p{
-                  font-size: 48px;
-                  color:#343434;
-                  padding-bottom: 40px;
-                  padding-top: 30px;
-                }
-                span{
-                  font-size: 45px;
-                  color: #BABABA;
-                }
-                a{
-                  color: #F88455;
-                  font-size:35px;
-                }
-                .info-tit{
-
-                }
-              }
-            }
-            li:first-child{
-              padding-top: 0;
-            }
-          }
-        }
-      }
-    }
-  }
+<style lang="less">
+  @import './home.less'; //引入全局less文件
 </style>

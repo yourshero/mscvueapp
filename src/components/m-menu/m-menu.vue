@@ -92,7 +92,8 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #FBFBFB;  
+    background: #FBFBFB; 
+    z-index: 999; 
     ul {
       display: flex;
       height: 100%;

@@ -30,6 +30,9 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box;
+    padding: 0 104px;
+
     .m-head-box {
       height: 67px;
       width: 859px;
@@ -47,7 +50,6 @@
 
       span {
         font-size: 32px;
-        font-family: FZLTHJW--GB1-0;
         font-weight: normal;
         color: rgba(157, 157, 157, 1);
         line-height: 23px;

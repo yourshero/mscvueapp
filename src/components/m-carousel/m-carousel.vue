@@ -1,6 +1,6 @@
 <template>
   <div class="my-slide">
-    <div class="swiper-container">
+    <div class="swiper-container banner1">
       <div class="swiper-wrapper">
         <div v-for='el in arrItem' class="swiper-slide" :key='el.name'>
           <img class="img" :src="el.imgUrl">
@@ -16,7 +16,7 @@
   import 'swiper/dist/css/swiper.css';
   export default {
     mounted: function () {
-      new Swiper('.swiper-container', {
+      new Swiper('.banner1', {
         loop: true, // 循环模式选项
         autoplay:true,
         // 如果需要分页器
