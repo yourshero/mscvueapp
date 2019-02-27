@@ -27,7 +27,7 @@
       </div>
       <div class="on" @click='doFn(false)'>
         <span>
-          折叠导航
+          <<折叠导航
         </span>
       </div>
     </div>
@@ -153,32 +153,52 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .m-home-menu {
+    z-index: 100000;
+    position: fixed;
+    bottom:170px;
+    left: 0;
     .off {
       width: 292px;
       height: 123px;
       border: 1px solid #bbbbbb;
       border-left: none;
       line-height: 123px;
+      box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+      background: #fff;
       text-align: center;
+      color: #707070;
+      box-sizing: border-box;
     }
 
     .course-container {
+      box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+      background: #fff;
+      .on{
+        height: 123px;
+        line-height: 134px;
+        font-size: 35px;
+        color: #707070;
+        padding-left: 41px;
+        border-top: 1px solid #D9D9D9;
+      }
       .course {
         display: flex;
         justify-content: space-between;
-
+        padding-top: 35px;
+        padding-bottom: 57px;
         .course-nav {
           ul {
             width: 240px;
             background: rgba(239, 239, 243, 1);
             padding: 138px 0;
-
             li {
               height: 138px;
               color: #707070;
               font-size: 40px;
               line-height: 138px;
               text-align: center;
+              border-bottom:1px solid #D9D9D9;
+              box-sizing: border-box;
             }
             .active{
                 background: #fff;
@@ -194,6 +214,7 @@
               color: #000000;
               font-size: 40px;
               margin-top: 30px;
+              padding-left: 21px;
             }
 
             ul {
