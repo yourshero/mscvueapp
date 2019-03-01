@@ -85,14 +85,20 @@
     <!-- 个人列表 -->
     <div class="center-date">
       <ul>
-        <li class="">
-          <img src="" alt="" class="icon">
+        <li v-for="(item,index) in centerDate" :key='index'>
+          <img :src="item.iconUrl" alt="" class="icon">
           <span>
-
+            {{item.text}}
           </span>
-          <img src="" alt="" class="arrow">
+          <img src="@/assets/images/learner/arrow_icon.png" alt="" class="arrow">
         </li>
       </ul>
+    </div>
+    <!-- 退出登录 -->
+    <div class="quit-btn">
+      <router-link to='#'>
+        退出登录
+      </router-link>
     </div>
   </div>
 </template>
@@ -163,12 +169,20 @@
             detail: [{
               record: '2154',
               title: '展示数据类'
-            }]
+            },
+            {
+            record: '2154',
+              title: '展示数据类'
+            }
+            ]
           },
           {
             name: '销量历史数据',
             dataUrl: require('@/assets/images/learner/his_pic2.png'),
             detail: [{
+              record: '2154',
+              title: '展示数据类'
+            },{
               record: '2154',
               title: '展示数据类'
             }]
@@ -178,6 +192,10 @@
             dataUrl: require('@/assets/images/learner/his_pic3.png'),
             detail: [{
               record: '2154',
+              title: '展示数据类'
+            },
+            {
+            record: '2154',
               title: '展示数据类'
             }]
           }

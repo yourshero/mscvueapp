@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home/home'
-import Learn from '@/components/learn/learn'
+import Learnfree from '@/components/learn/learn-free'
 import Learner from '@/components/learner/learner'
 import Tool from '@/components/tool/tool'
 
@@ -18,9 +18,9 @@ export default new Router({
       }
     },
     {
-      path: '/learn',
-      name: 'Learn',
-      component: Learn,
+      path: '/learn-free',
+      name: 'Learnfree',
+      component: Learnfree,
       meta:{
         curIndex:1
       }
