@@ -1,6 +1,6 @@
 <template>
   <div class="m-learn-top">
-     <img :src="bgUrl" alt="">
+     <img :src="bgUrl" alt="" class="bg">
      <ul>
          <li v-for="(item,index) in navData" :key='index'>
              <img :src="item.listUrl" alt="">
@@ -37,9 +37,10 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
     .m-learn-top{
-        img{
+        .bg{
         height:349px;
         display: block;
+        width: 100%;
         }
         ul{
             background: #fff;
