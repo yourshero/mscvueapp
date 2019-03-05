@@ -51,7 +51,7 @@
           {
             img: require('@/assets/images/footer_btn02.png'),
             text: '学习',
-            route: '/learn-free',
+            route: '/learn-vip',
             cur_img: require('@/assets/images/footer_btn_selected02.png'),
           },
           {

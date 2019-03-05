@@ -244,6 +244,6 @@ import mLearnTitle from '@/components/m-learn-title/m-learn-title';
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less">
+<style scoped lang="less">
   @import './learn-free.less'; //引入全局less文件
 </style>
