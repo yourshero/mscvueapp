@@ -3,7 +3,9 @@
      <img :src="bgUrl" alt="" class="bg">
      <ul>
          <li v-for="(item,index) in navData" :key='index'>
+             <router-link :to='item.url'>
              <img :src="item.listUrl" alt="">
+             </router-link>
          </li>
      </ul>
   </div>
@@ -17,16 +19,20 @@
         bgUrl:require('@/assets/images/learn/section1_bg.png'),
         navData:[
             {
-                listUrl:require('@/assets/images/learn/section1_icon01.png')
+                listUrl:require('@/assets/images/learn/section1_icon01.png'),
+                url:'/learn-vip/forum-index'
             },
             {
-                listUrl:require('@/assets/images/learn/section1_icon02.png')
+                listUrl:require('@/assets/images/learn/section1_icon02.png'),
+                url:'#'
             },
             {
-                listUrl:require('@/assets/images/learn/section1_icon03.png')
+                listUrl:require('@/assets/images/learn/section1_icon03.png'),
+                 url:'#'
             },
             {
-                listUrl:require('@/assets/images/learn/section1_icon04.png')
+                listUrl:require('@/assets/images/learn/section1_icon04.png'),
+                 url:'#'
             },
         ]
       }

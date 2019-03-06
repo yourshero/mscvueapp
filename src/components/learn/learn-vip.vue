@@ -72,17 +72,22 @@
     <div class="section3">
         <m-learn-course :item='majorData'>
         </m-learn-course>
+        <m-learn-course :item='minorData'>
+        </m-learn-course>
+        <m-load-more :text='text1'></m-load-more>
     </div>
   </div>
 </template>
 <script>
   import mLearnTop from '@/components/m-learn-top/m-learn-top';
   import mLearnCourse from '@/components/m-learn-course/m-learn-course';
+  import mLoadMore from '@/components/m-load-more/m-load-more';
   export default {
     name: 'HelloWorld',
     components: {
       'm-learn-top': mLearnTop,
       'm-learn-course': mLearnCourse,
+      'm-load-more':mLoadMore,
     },
     props: {
 
@@ -94,6 +99,7 @@
     data() {
       return {
         // 小班教学
+        text1:'查看更多',
         smallClass: [{
           joinClass: '2019-01-03班',
           teacherPic: require('@/assets/images/learn/people_icon1.png'),
@@ -162,6 +168,7 @@
         }],
         // *主修课程列表*
         majorData:{
+            bgCur:1,
             majorName:'主修课程列表',
             course:[{
                 marjorCover:require('@/assets/images/learn/course_bg_01.png'),
@@ -177,6 +184,33 @@
                 num:22,
                 status:0
             }]
+        },
+        // 辅修课程列表
+        minorData:{
+          bgCur:0,
+          majorName:'辅修课程列表',
+          course:[{
+            marjorCover:require('@/assets/images/learn/course_bg_01.png'),
+            price:6800.00,
+            title:'视频班:主图视频从无到有',
+            num:265,
+            status:1
+          },
+            {
+              marjorCover:require('@/assets/images/learn/course_bg_02.png'),
+              price:6800.00,
+              title:'美工班：以运营思路做美工',
+              num:22,
+              status:1
+            },
+            {
+              marjorCover:require('@/assets/images/learn/course_bg_02.png'),
+              price:6800.00,
+              title:'经理班VIP直播课回放',
+              num:22,
+              status:1
+            }
+          ]
         }
       }
     },

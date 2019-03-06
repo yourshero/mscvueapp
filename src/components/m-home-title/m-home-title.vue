@@ -29,7 +29,7 @@
     mounted(){
         //过滤筛选
         this.date = this.arr.filter( v => v.name === this.curtext)[0];
-        console.log(this.date);
+        //console.log(this.date);
         this.name = this.date.name;
         this.des = this.date.des;
     }

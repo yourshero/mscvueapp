@@ -77,7 +77,7 @@
     // 监听路由
     watch: {
       $route(val) {
-        console.log(this.curIndex)
+        console.log(val.meta)
         this.curIndex = val.meta.curIndex;
       }
     }

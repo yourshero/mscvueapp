@@ -29,9 +29,7 @@
             </li>
           </ul>
         </div>
-         <div class="load-more">
-            查看更多>>
-          </div>
+         <m-load-more :text='text1'></m-load-more>
     </div>
     <!-- 盈利課程 -->
     <div class="section3">
@@ -55,9 +53,7 @@
                 </span>
             </li>
           </ul>
-          <div class="course-more">
-            查看课程列表>>
-          </div>
+          <m-load-more :text='text2'></m-load-more>
         </div>
       </div>
     </div>
@@ -111,15 +107,20 @@
 <script>
 import mLearnTop from '@/components/m-learn-top/m-learn-top';
 import mLearnTitle from '@/components/m-learn-title/m-learn-title';
+import mLoadMore from '@/components/m-load-more/m-load-more';
   export default {
     name: 'HelloWorld',
     components: {
       'm-learn-top':mLearnTop,
       'm-learn-title':mLearnTitle,
+      'm-load-more':mLoadMore,
     },
     data() {
       return {
         msg: '学习',
+        // 更多
+        text1:'查看更多>>',
+        text2:'查看更多课程>>',
         // 小班教学
         smallClass:{
           calssName:'【2019-01-03班】',

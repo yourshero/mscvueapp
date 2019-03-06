@@ -21,7 +21,8 @@
         slidesOffsetBefore : 30,
         loop: false,
         slidesPerView: 'auto',
-        loopedSlides:1
+        loopedSlides:1,
+        autoplay:true,
       })
     },
     data() {
