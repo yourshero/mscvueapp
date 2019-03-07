@@ -5,6 +5,7 @@ import Learnfree from '@/components/learn/learn-free'
 import Learnvip from '@/components/learn/learn-vip'
 import Learner from '@/components/learner/learner'
 import Tool from '@/components/tool/tool'
+import Blank from '@/components/blank/blank'
 import Forumindex from '@/components/forum/forum-index'
 Vue.use(Router)
 
@@ -31,16 +32,18 @@ export default new Router({
       name: 'Learnvip',
       component: Learnvip,
       meta:{
-        curIndex:1
+        curIndex:1,
+        init:true
       },
       children:[
         {
-            path:'forum-index',
-            component:Forumindex,
-            meta:{
-              curIndex:1
-            },
-        }
+          path:'forum-index',
+          component:Forumindex,
+          meta:{
+            curIndex:1,
+            init:false
+          },
+      },
       ]
     },
     {
@@ -49,7 +52,10 @@ export default new Router({
       component: Tool,
       meta:{
         curIndex:2
-      }
+      },
+      children:[
+        { path: 'blank', component: Blank },
+      ]
     },
     {
       path: '/learner',

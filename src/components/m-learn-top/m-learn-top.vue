@@ -3,7 +3,7 @@
      <img :src="bgUrl" alt="" class="bg">
      <ul>
          <li v-for="(item,index) in navData" :key='index'>
-             <router-link :to='item.url'>
+             <router-link :to="item.url">
              <img :src="item.listUrl" alt="">
              </router-link>
          </li>
@@ -36,7 +36,12 @@
             },
         ]
       }
-    }
+    },
+      methods: {
+      doInit: function (el) {
+          this.$emit('listenDoInit',el)
+      },
+      }
   }
 </script>
 

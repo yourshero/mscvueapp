@@ -12,14 +12,18 @@
             <div class="swiper-pagination"></div>
             </div>
         </div>
-        asdsadasdasdasd
+        <m-forum-box :item='smallData'></m-forum-box>
     </div>
 </template>
 <script>
   import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.css';
+  import mForumBox from '@/components/m-forum-box/m-forum-box';
   export default {
     name: 'HelloWorld',
+    components:{
+      'm-forum-box':mForumBox
+    },
     mounted: function () {
       new Swiper('.banner3', {
         loop: true, // 循环模式选项
@@ -32,6 +36,33 @@
     },
     data() {
       return {
+        // 论坛小班教学
+        smallData:{
+          title:'小班教学',
+          des:'',
+          content:[
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'11-06-21-开班'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'11-06-21-开班'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'11-06-21-开班'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'11-06-21-开班'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'11-06-21-开班'
+            }
+          ]
+        },
         arrItem: [
           {
             name: 'swiperSlide1',
