@@ -13,6 +13,7 @@
             </div>
         </div>
         <m-forum-box :item='smallData'></m-forum-box>
+        <m-forum-box :item='studyData'></m-forum-box>
     </div>
 </template>
 <script>
@@ -39,7 +40,6 @@
         // 论坛小班教学
         smallData:{
           title:'小班教学',
-          des:'',
           content:[
             {
               iconUrl:require('@/assets/images/forum/text_icon.png'),
@@ -55,11 +55,39 @@
             },
             {
               iconUrl:require('@/assets/images/forum/text_icon.png'),
-              info:'11-06-21-开班'
+              info:'11-06-21-开班',
+              active:1
             },
             {
               iconUrl:require('@/assets/images/forum/text_icon.png'),
               info:'11-06-21-开班'
+            },
+            {
+              iconUrl:'',
+              info:''
+            }
+          ]
+        },
+        // 专题研究班
+        studyData:{
+          title:'专题研究班',
+          des:'小班毕业后选修加入',
+          content:[
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'班级报名'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'毕业交流'
+            },
+            {
+              iconUrl:require('@/assets/images/forum/text_icon.png'),
+              info:'班级报名'
+            },
+            {
+              iconUrl:'',
+              info:''
             }
           ]
         },

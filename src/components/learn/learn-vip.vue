@@ -1,6 +1,5 @@
 <template>
   <div class="learn-vip">
-    <div v-if='init'>
       <m-learn-top></m-learn-top>
       <!-- 小班教学 -->
       <div class="section1">
@@ -78,8 +77,6 @@
         <m-load-more :text='text1'></m-load-more>
       </div>
     </div>
-    <router-view v-else></router-view>
-  </div>
 </template>
 <script>
   import mLearnTop from '@/components/m-learn-top/m-learn-top';
@@ -105,9 +102,9 @@
     },
     // 监听路由
     watch: {
-      $route(val) {
-        this.init = val.meta.init;
-      }
+      // $route(val) {
+      //   this.init = val.meta.init;
+      // }
     },
     data() {
       return {

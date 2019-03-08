@@ -45,13 +45,13 @@
         menuDate: [{
             img: require('@/assets/images/footer_btn01.png'),
             text: '首页',
-            route: '/',
+            route: '/home',
             cur_img: require('@/assets/images/footer_btn_selected01.png'),
           },
           {
             img: require('@/assets/images/footer_btn02.png'),
             text: '学习',
-            route: '/learn-vip',
+            route: '/learn/learn-vip',
             cur_img: require('@/assets/images/footer_btn_selected02.png'),
           },
           {

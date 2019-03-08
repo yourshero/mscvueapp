@@ -20,27 +20,25 @@
         navData:[
             {
                 listUrl:require('@/assets/images/learn/section1_icon01.png'),
-                url:'/learn-vip/forum-index'
+                url:'/forum/forum-index'
             },
             {
                 listUrl:require('@/assets/images/learn/section1_icon02.png'),
-                url:'#'
+                url:'javascript:void(0);'
             },
             {
                 listUrl:require('@/assets/images/learn/section1_icon03.png'),
-                 url:'#'
+                 url:'javascript:void(0);'
             },
             {
                 listUrl:require('@/assets/images/learn/section1_icon04.png'),
-                 url:'#'
+                 url:'javascript:void(0);'
             },
         ]
       }
     },
       methods: {
-      doInit: function (el) {
-          this.$emit('listenDoInit',el)
-      },
+      
       }
   }
 </script>

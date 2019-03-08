@@ -12,7 +12,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/', redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: Home,
       meta:{
@@ -28,23 +31,21 @@ export default new Router({
     //   }
     // },
     {
-      path: '/learn-vip',
+      path: '/learn/learn-vip',
       name: 'Learnvip',
       component: Learnvip,
       meta:{
         curIndex:1,
         init:true
-      },
-      children:[
-        {
-          path:'forum-index',
-          component:Forumindex,
-          meta:{
-            curIndex:1,
-            init:false
-          },
-      },
-      ]
+      }
+    },
+    {
+      path: '/forum/forum-index',
+      name: 'forum-index',
+      component: Forumindex,
+      meta:{
+        curIndex:1
+      }
     },
     {
       path: '/tool',

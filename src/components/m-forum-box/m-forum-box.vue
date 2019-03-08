@@ -1,16 +1,19 @@
 <template>
   <div class="m-forum-box">
-      <div class="tit">
-          <span>
+      <div class="tit" @click='tab_btn'>
+          <p>
             {{title}}
-          </span>
-          <img src="@/assets/images/forum/arrow_r.png" alt="">
+            <span v-if="des">
+                ({{(des)}})
+            </span>
+          </p>
+          <img :src="status?arrowUrlR:arrowUrlL" alt="">
       </div>
-      <ul>
+      <ul :class="status?'':'off'">
           <li v-for="(item,index) in forumData" :key='index'>
               <router-link to='#'>
                   <img :src="item.iconUrl" alt="">
-                  <span>{{item.info}}</span>
+                  <span :class="item.active?'active':''">{{item.info}}</span>
               </router-link>
           </li>
       </ul>
@@ -27,7 +30,10 @@
         msg: '论坛模块',
         forumData:'',
         title:'',
-        des:''
+        des:'',
+        status:true,
+        arrowUrlR:require('@/assets/images/forum/arrow_r.png'),
+        arrowUrlL:require('@/assets/images/forum/arrow_b.png'),
       }
     },
     created(){
@@ -36,7 +42,18 @@
         this.des = this._props.item.des;
     },
     mounted(){
-        
+        //let list_length = this.$refs.list.children.length
+        // if(list_length%2 !=0){
+        // }
+    },
+    methods:{
+        tab_btn:function(){
+            if(this.status){
+                this.status = false;
+            }else{
+                this.status = true;
+            }
+        }
     }
   }
 </script>
@@ -44,6 +61,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
     .m-forum-box{
+        margin-bottom:42px;
         background: #fff;
         .tit{
                 display: flex;
@@ -52,10 +70,15 @@
                 padding-left: 98px;
                 padding-right: 45px;
                 height: 144px;
-                span{
+                p{
                     font-size:44px;
                     font-weight:bold;
                     color:rgba(17,17,17,1);
+                    span{
+                        font-size:35px;
+                        font-weight:bold;
+                        color:#707070;
+                    }
                 }
                 img{
                     display: block;
@@ -66,10 +89,13 @@
         ul{
             display: flex;
             flex-wrap: wrap;
+            border-top:1px solid #D4D4D4;
             li{
+                box-sizing: border-box;
                 width:50%;
                 height: 130px;
-                border-top:1px solid #D4D4D4;
+                border-bottom:1px solid #D4D4D4;
+                border-right: 1px solid #D4D4D4;
                 a{
                     display: flex;
                     align-items: center;
@@ -80,14 +106,27 @@
                     display: block;
                     width: 48px;
                     height: 48px;
+                    margin-right: 30px;
                     }
                     span{
                     font-size:38px;
                     font-weight:400;
                     color:rgba(162,162,162,1);
                     }
+                    .active{
+                        color:#AB7EF4;
+                    }
                 }
             }
+            li:nth-of-type(even){
+                border-right: none;
+            }
+        }
+        .on{
+            display: block;
+        }
+        .off{
+            display: none;
         }
     }
 </style>
