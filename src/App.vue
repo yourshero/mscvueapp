@@ -18,7 +18,6 @@
     }
   }
 </script>
-
 <style lang='less' scoped>
   .app {
     background: #F2F2F2;
