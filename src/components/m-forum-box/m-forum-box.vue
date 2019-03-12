@@ -99,9 +99,11 @@
                 a{
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justify-content:flex-start;
                     width: 100%;
                     height: 100%;
+                    padding-left: 91px;
+                    box-sizing: border-box;
                     img{
                     display: block;
                     width: 48px;

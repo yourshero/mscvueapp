@@ -15,6 +15,7 @@
       }
     },
     mounted(){
+      console.log(this._props);
     }
   }
 </script>

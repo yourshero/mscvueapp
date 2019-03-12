@@ -8,6 +8,7 @@ import Tool from '@/components/tool/tool'
 import Blank from '@/components/blank/blank'
 import Forumindex from '@/components/forum/forum-index'
 import Forumlist from '@/components/forum/forum-list'
+import Forumdetail from '@/components/forum/forum-detail'
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +53,14 @@ export default new Router({
       path: '/forum/forum-list',
       name: 'forum-list',
       component: Forumlist,
+      meta:{
+        curIndex:1
+      }
+    },
+    {
+      path: '/forum/forum-detail',
+      name: 'forum-detail',
+      component: Forumdetail,
       meta:{
         curIndex:1
       }
