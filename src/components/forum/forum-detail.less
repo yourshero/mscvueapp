@@ -41,12 +41,28 @@
             width: 100%;
         }
         .detail-btn{
+            display: flex;
+            justify-content: center;
+            padding: 110px 0;
             .zan{
                 width:317px;
                 height:78px;
                 border:2px solid rgba(255, 163, 161, 1);
                 border-radius:3px;
                 background: #FFF6F6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 35px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+                    margin-right: 21px;
+                }
+                span{
+                    color: #E8312D;
+                }
             }
             .share{
                 width:317px;
@@ -54,7 +70,144 @@
                 border:2px solid rgba(243, 186, 136, 1);
                 border-radius:3px;
                 background: #FFF5ED;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 52px;
+                    height: 52px;
+                    display: block;
+                    margin-right: 21px;
+                }
+                span{
+                    color:#FE8010;
+                }
             }
+        }
+    }
+    // 回帖
+    .reply-box{
+        background: #fff;   
+        .reply-tit{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 54px;
+            strong{
+                font-size:48px;
+                color:rgba(33,33,33,1);
+            }
+            span{
+                width:260px;
+                height:84px;
+                background:rgba(255,107,0,1);
+                border-radius:4px;
+                display: block;
+                font-size:40px;
+                font-weight:400;
+                color:rgba(255,255,255,1);
+                line-height: 84px;
+                text-align: center;
+            }
+        }
+        ul{
+            li{
+                border-top: 0.03125rem solid rgba(201, 201, 201, .36);
+                padding: 30px 54px;
+            }
+           .reply-info{
+               display: flex;
+               align-items: center;
+               justify-content: flex-start;
+               img{
+                width:80px;
+                height:80px;
+                border-radius:50%;
+                display: block;
+                margin-right: 5px;
+               }
+               strong{
+                font-size:40px;
+                color:rgba(33,33,33,1);
+               }
+           } 
+           p{
+            font-size:35px;
+            font-weight:400;
+            color:rgba(33,33,33,1);
+            line-height:65px;
+            padding-left: 90px;
+           }
+           .discuss-box{
+            width:100%;
+            height:114px;
+            background:rgba(244,244,244,1);
+            border-radius:4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 36px;
+            box-sizing: border-box;
+            margin-top: 60px;
+               .reply-zan{
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                span{
+                    width:147px;
+                    height:52px;
+                    background:rgba(74,144,226,1);
+                    border-radius:6px;
+                    display: block;
+                    margin-right: 57px;
+                    text-align: center;
+                    line-height: 52px;
+                    color: #FFFFFF;
+                }
+                p{
+                    font-size:32px;
+                    font-weight:400;
+                    color:rgba(154,154,154,1);
+                    padding: 0;
+                }
+               }
+               .note-rank{
+                font-size:32px;
+                font-weight:400;
+                color:rgba(154,154,154,1);
+                span{
+                    width:147px;
+                    height:52px;
+                    background:rgba(75,211,138,1);
+                    border-radius:6px;
+                    display: inline-block;
+                    color: #FFFFFF;
+                    text-align: center;
+                    line-height: 52px;
+                }
+               }
+           }
+        }
+    }   
+    .bottom-btn{
+        margin-top: 36px;
+        height: 140px;
+        display: flex;
+        a{
+            height: 100%;
+            font-size:40px;
+            font-weight:bold;
+            display: block;
+            width: 50%;
+            text-align: center;
+            line-height: 140px;
+            color:rgba(244,249,242,1);
+        }
+        a:first-child{
+            background:rgba(254,164,0,1);
+        }
+        a:last-child{
+            background:rgba(255,104,104,1);
         }
     }
 }

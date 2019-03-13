@@ -31,4 +31,7 @@
             border-top: 1px solid #C9C9C9;
             background: #fff;
     }
+    .notop{
+      border-top: none;
+    }
 </style>
