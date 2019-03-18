@@ -24,7 +24,7 @@
             },
             {
                 listUrl:require('@/assets/images/learn/section1_icon02.png'),
-                url:'javascript:void(0);'
+                url:'/homework/homework-index'
             },
             {
                 listUrl:require('@/assets/images/learn/section1_icon03.png'),

@@ -9,6 +9,7 @@ import Blank from '@/components/blank/blank'
 import Forumindex from '@/components/forum/forum-index'
 import Forumlist from '@/components/forum/forum-list'
 import Forumdetail from '@/components/forum/forum-detail'
+import Homeworkindex from '@/components/homework/homework-index'
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +40,15 @@ export default new Router({
       meta:{
         curIndex:1,
         init:true
+      }
+    },
+    // 作业
+    {
+      path: '/homework/homework-index',
+      name: 'homework-index',
+      component: Homeworkindex,
+      meta:{
+        curIndex:1
       }
     },
     {
