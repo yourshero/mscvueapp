@@ -3,8 +3,10 @@
 <div class='m-homework-menu'>
     <ul>
         <li v-for="(item,index) in homeworkMenu" :key='index'>
-            <img :src="item.imgIcon" alt="">
-            <span>{{item.menuName}}</span>
+            <router-link :to='item.link'>
+                <img :src="item.imgIcon" alt="">
+                <span>{{item.menuName}}</span>
+            </router-link>
         </li>
     </ul>
 </div>
@@ -22,19 +24,23 @@ return {
     homeworkMenu:[
         {
             imgIcon:require('@/assets/images/homework/homeworkIcon01.png'),
-            menuName:'作业首页'
+            menuName:'作业首页',
+            link:'/homework/homework-index'
         },
         {
             imgIcon:require('@/assets/images/homework/homeworkIcon02.png'),
-            menuName:'作业列表'
+            menuName:'作业列表',
+            link:'/homework/homework-list'
         },
         {
             imgIcon:require('@/assets/images/homework/homeworkIcon03.png'),
-            menuName:'我已完成'
+            menuName:'我已完成',
+            link:'#'
         },
         {
             imgIcon:require('@/assets/images/homework/homeworkIcon04.png'),
-            menuName:'还未完成'
+            menuName:'还未完成',
+            link:'#'
         },
     ]
 };

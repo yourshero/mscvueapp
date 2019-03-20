@@ -10,6 +10,7 @@ import Forumindex from '@/components/forum/forum-index'
 import Forumlist from '@/components/forum/forum-list'
 import Forumdetail from '@/components/forum/forum-detail'
 import Homeworkindex from '@/components/homework/homework-index'
+import Homeworklist from '@/components/homework/homework-list'
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +48,14 @@ export default new Router({
       path: '/homework/homework-index',
       name: 'homework-index',
       component: Homeworkindex,
+      meta:{
+        curIndex:1
+      }
+    },
+    {
+      path: '/homework/homework-list',
+      name: 'homework-list',
+      component: Homeworklist,
       meta:{
         curIndex:1
       }

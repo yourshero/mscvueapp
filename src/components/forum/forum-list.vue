@@ -1,6 +1,6 @@
 <template>
     <!-- 论坛列表 -->
-  <div class="forum-list">
+  <div class="forum-list btm">
      <m-back class="line"></m-back>
      <div class="forum-list-box">
        <ul>

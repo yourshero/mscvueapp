@@ -30,5 +30,9 @@
         line-height: 140px;
         text-align: center;
         color:rgba(244,249,242,1);
+        position: fixed;
+        left: 0;
+        bottom:163px;
+        width: 100%;
   }
 </style>

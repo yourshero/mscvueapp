@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class='forum-detail'>
+  <div class='forum-detail btm'>
     <m-back class="line"></m-back>
     <div class="detail-box">
       <div class="tit">

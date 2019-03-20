@@ -25,5 +25,9 @@
       padding-top: 107px;
       padding-bottom: 163px;
     }
+    .btm{
+        margin-bottom:140px;
+        background: #fff;
+    }
   }
 </style>

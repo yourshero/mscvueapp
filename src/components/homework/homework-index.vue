@@ -18,7 +18,7 @@
                 <p>{{item.artilc}}</p>
             </li>
         </ul>
-        <m-load-more :text='text' style='border-top:none'></m-load-more>
+        <m-load-more :text='text' style='border-top:none;margin-bottom: 1.03125rem;'></m-load-more>
     <m-bottom-back></m-bottom-back>
 </div>
 </template>
